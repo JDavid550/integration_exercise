@@ -1,7 +1,9 @@
+""" This module filte the palindromes from the list of words """
+
 from typing import List
 
-
-def readFile() -> List[str]:
+def read_file() -> List[str]:
+    """ Reads file """
     data: List[str] = []
     with open('../utils/randomWords.txt', 'r', encoding='utf-8') as f:
         for i in f:
@@ -9,7 +11,8 @@ def readFile() -> List[str]:
     return data
 
 
-def filterPalindrome() -> List[str]:
-    words: List[str] = readFile()
+def filter_palindrome() -> List[str]:
+    """ Filer palindrome words """
+    words: List[str] = read_file()
     palindromes = list(filter(lambda word: word == word[::-1], words))
     return palindromes
